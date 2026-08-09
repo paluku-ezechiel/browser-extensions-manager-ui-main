@@ -279,3 +279,21 @@ input {
   color: var(--Neutral_100);
   font-weight: 700;
 }
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  .content-items {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .extension-list {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .content-items {
+    grid-template-columns: 1fr;
+  }
+}
