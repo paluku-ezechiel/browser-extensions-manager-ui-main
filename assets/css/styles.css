@@ -30,10 +30,10 @@
 
 .logo-text {
   fill: #ffffff;
-  /* 
-    .theme-dark & {
-       fill: black;
-      } */
+}
+
+.theme-dark .logo-text {
+  fill: black;
 }
 
 :root {
@@ -50,13 +50,13 @@ body {
   padding: 2rem 1rem;
 }
 
-/* body.theme-dark {
+body.theme-dark {
   background-color: var(--Neutral_100);
+}
 
-  .content-item {
-    background-color: #1e2230;
-  }
-} */
+.content-item {
+  background-color: #1e2230;
+}
 
 h1,
 h2,
@@ -98,6 +98,10 @@ a {
   border-radius: 1rem;
 }
 
+.theme-dark .header {
+  background-color: white;
+}
+
 .extensions-sun {
   width: 3rem;
   height: 3rem;
@@ -126,12 +130,10 @@ a {
   margin-bottom: 2rem;
 }
 
-/* .theme-dark & {
-        h1 {
-          color: #000000; 
-        }
-      }
-    } */
+.theme-dark h1 {
+  color: #000000;
+}
+
 .extension-texte h1 {
   margin-bottom: 0;
   font-size: 2rem;
@@ -186,11 +188,11 @@ a {
   padding: 1.5rem;
   background-color: #1e2230;
   border-radius: 1.5rem;
-  /* 
-    .theme-dark & {
-      background-color: var(--Neutral_100); // Devient blanc en mode clair
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    } */
+}
+
+.theme-dark .content-item {
+  background-color: var(--Neutral_100);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .content-main-row {
@@ -205,6 +207,18 @@ a {
   width: 44px;
   height: 24px;
   cursor: pointer;
+}
+
+.theme-dark h1 {
+  color: #000000; /* Le titre devient noir */
+}
+
+.theme-dark .content-item-text h2 {
+  color: #000000;
+}
+
+.theme-dark .content-item-text-paragraphe {
+  color: #1a202c;
 }
 
 input {

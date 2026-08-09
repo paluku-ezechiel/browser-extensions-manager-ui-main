@@ -1,18 +1,32 @@
 const contentItems = document.querySelector(".content-items");
 const btnFilter = document.querySelectorAll(".btn-filter");
+const sunIcon = document.querySelector("#sun-icon");
 let cartArticles = [];
 let currentFilter = "All";
+
+sunIcon.addEventListener("click", () => {
+  document.body.classList.toggle("theme-dark");
+});
 
 btnFilter.forEach((button) => {
   button.addEventListener("click", (event) => {
     const target = event.target;
     const value = target.dataset.class;
     currentFilter = value;
+    displayArticle();
   });
 });
 
 const displayArticle = () => {
-  const textNodes = cartArticles.map((article) => {
+  let texteAAfficher;
+  if (currentFilter === "Active") {
+    texteAAfficher = cartArticles.filter((el) => el.isActive === true);
+  } else if (currentFilter === "Inactive") {
+    texteAAfficher = cartArticles.filter((el) => el.isActive === false);
+  } else {
+    texteAAfficher = cartArticles;
+  }
+  const textNodes = texteAAfficher.map((article) => {
     return createArticlesElements(article);
   });
 
