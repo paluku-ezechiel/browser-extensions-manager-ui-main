@@ -171,3 +171,111 @@ a {
   padding: 0.4rem;
   font-size: 1rem;
 }
+
+.content-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+
+.content-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: #1e2230;
+  border-radius: 1.5rem;
+  /* 
+    .theme-dark & {
+      background-color: var(--Neutral_100); // Devient blanc en mode clair
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    } */
+}
+
+.content-main-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+}
+
+input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--Neutral_300, #cbd5e1);
+  border-radius: 24px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: var(--Red_700);
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(20px);
+}
+
+.content-item-text h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.content-item-text-paragraphe {
+  font-size: 1.3rem;
+  color: var(--Neutral_100);
+}
+
+.extension-actions {
+  display: flex;
+  justify-content: space-between; /* Pousse Remove à gauche et le Toggle à droite */
+  align-items: center;
+  width: 100%; /* S'étale sur toute la largeur de la carte */
+}
+
+.btn-remove {
+  border: 1px solid var(--Neutral_700);
+  border-radius: 2rem;
+  padding: 0.2rem;
+}
+
+.btn-remove button {
+  border: none;
+  padding: 1rem 2rem;
+  background: none;
+  border-radius: 2rem;
+  background: var(--Neutral_700);
+  cursor: pointer;
+  color: var(--Neutral_100);
+  font-weight: 700;
+}
